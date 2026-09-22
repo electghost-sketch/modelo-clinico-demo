@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f4c5c" />
+  <meta name="description" content="Propuesta interactiva de distribución para Habilitación del Modelo Clínico." />
+  <title>Habilitación Modelo Clínico · Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="demo-ribbon">DEMO · DATOS FICTICIOS</div>
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <span class="brand-mark" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+      <span>
+        <strong>Modelo Clínico</strong>
+        <small>Propuesta de distribución</small>
+      </span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+      <a href="#resumen">Resumen</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#participantes">Participantes</a>
+      <a href="#orientaciones">Orientaciones</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-glow hero-glow-a"></div>
+      <div class="hero-glow hero-glow-b"></div>
+      <div class="hero-content wrap">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">FACULTAD DE ODONTOLOGÍA · DOCUMENTO INTERACTIVO</p>
+          <h1>Distribución<br><span>Habilitación</span><br>Modelo Clínico</h1>
+          <p class="hero-lead">Una propuesta simple, visual y fácil de consultar desde el celular para organizar participantes, horarios, salas y actividades.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#participantes">Buscar mi información</a>
+            <a class="btn btn-ghost" href="#agenda">Ver agenda</a>
+          </div>
+          <div class="hero-meta" aria-label="Información general">
+            <div><span>Período</span><strong>10–14 agosto 2026</strong></div>
+            <div><span>Modalidad</span><strong>Presencial</strong></div>
+            <div><span>Estado</span><strong>Propuesta para revisión</strong></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="orb orb-main">
+            <div class="tooth-line">◯</div>
+            <div class="orb-label">Formación que transforma</div>
+          </div>
+          <div class="floating-card fc-one"><span>389</span><small>participantes</small></div>
+          <div class="floating-card fc-two"><span>5</span><small>días</small></div>
+          <div class="floating-card fc-three"><span>3</span><small>espacios</small></div>
+          <div class="visual-note">Personas · Conocimiento · Salud · Comunidad</div>
+        </div>
+      </div>
+      <div class="scroll-hint">Desliza para explorar <span>↓</span></div>
+    </section>
+
+    <section class="section wrap" id="resumen">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">RESUMEN GENERAL</p>
+          <h2>La información importante,<br>sin perderse en una planilla.</h2>
+        </div>
+        <p>La idea es que cada persona pueda entender rápidamente cuándo le corresponde participar, dónde debe ir y cuál es su actividad.</p>
+      </div>
+
+      <div class="stats-grid" id="statsGrid"></div>
+
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <div class="feature-icon">⌕</div>
+          <h3>Búsqueda por nombre</h3>
+          <p>Escribe el nombre y encuentra al instante grupo, fecha, horario, sala y actividad.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-icon">▦</div>
+          <h3>Agenda ordenada</h3>
+          <p>Los bloques se presentan por día y horario para evitar confusiones.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-icon">↗</div>
+          <h3>Un solo enlace</h3>
+          <p>Se puede enviar por correo, WhatsApp o copiar en cualquier plataforma.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="agenda">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">AGENDA SEMANAL</p>
+            <h2>Cinco días, una lectura clara.</h2>
+          </div>
+          <p>Auditorio · Sala HU Friedy · Sala Postgrado</p>
+        </div>
+
+        <div class="agenda-tabs" id="agendaTabs" role="tablist" aria-label="Seleccionar día"></div>
+        <div class="agenda-panel reveal" id="agendaPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="participantes">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">BUSCADOR DE PARTICIPANTES</p>
+          <h2>Encuentra tu asignación.</h2>
+        </div>
+        <p>Esta sección utiliza nombres ficticios en la demo. En el proyecto final se cargarían los datos reales desde la planilla.</p>
+      </div>
+
+      <div class="finder-card reveal">
+        <div class="finder-input-wrap">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="search" placeholder="Ej: Andrea, Carlos, Fernanda…" autocomplete="off" aria-label="Buscar participante por nombre" />
+          <button id="clearSearch" class="clear-search" type="button" aria-label="Limpiar búsqueda">×</button>
+        </div>
+        <div class="filter-row" id="filterRow"></div>
+        <p class="finder-count" id="finderCount"></p>
+        <div class="people-grid" id="peopleGrid"></div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="orientaciones">
+      <div class="wrap">
+        <div class="section-head light reveal">
+          <div>
+            <p class="eyebrow">ORIENTACIONES</p>
+            <h2>Cómo usar esta información.</h2>
+          </div>
+          <p>Un flujo simple pensado para que estudiantes, académicos y equipos administrativos sepan qué hacer sin tener que preguntar lo mismo varias veces.</p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card reveal"><span>01</span><h3>Busca tu nombre</h3><p>Usa el buscador o filtra por categoría.</p></article>
+          <article class="step-card reveal"><span>02</span><h3>Revisa tu bloque</h3><p>Confirma día, horario y actividad asignada.</p></article>
+          <article class="step-card reveal"><span>03</span><h3>Confirma la sala</h3><p>Verifica el espacio antes de trasladarte.</p></article>
+          <article class="step-card reveal"><span>04</span><h3>Participa</h3><p>Asiste con puntualidad y sigue las indicaciones.</p></article>
+        </div>
+
+        <div class="review-callout reveal">
+          <div>
+            <p class="eyebrow">VERSIÓN PARA REVISIÓN</p>
+            <h3>¿Qué debería evaluar quien reciba este enlace?</h3>
+          </div>
+          <ul>
+            <li>Si la información se entiende rápido desde el celular.</li>
+            <li>Si faltan secciones, categorías o datos importantes.</li>
+            <li>Si la navegación y el buscador resultan cómodos.</li>
+            <li>Qué cambios de diseño o contenido harían antes de usarlo oficialmente.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>Modelo Clínico · Demo de propuesta</strong>
+        <p>Documento web de muestra con datos ficticios.</p>
+      </div>
+      <a href="#inicio">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <dialog class="person-dialog" id="personDialog">
+    <form method="dialog" class="dialog-shell">
+      <button class="dialog-close" value="close" aria-label="Cerrar">×</button>
+      <div id="dialogContent"></div>
+    </form>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
