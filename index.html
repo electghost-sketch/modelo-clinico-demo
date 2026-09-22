@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0f4c5c" />
+  <meta name="theme-color" content="#121826" />
   <meta name="description" content="Propuesta interactiva de distribución para Habilitación del Modelo Clínico." />
   <title>Habilitación Modelo Clínico · Demo</title>
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23121826'/%3E%3Cpath d='M13 16h15v9H22v23h-9zm23 0h15v32h-9V25h-6z' fill='%23d8ff57'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ff6f61'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css?v=5" />
 </head>
 <body>
   <div class="demo-ribbon">DEMO · DATOS FICTICIOS</div>
   <header class="topbar" id="topbar">
     <a class="brand" href="#inicio" aria-label="Ir al inicio">
-      <span class="brand-mark" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </span>
+      <span class="brand-mark" aria-hidden="true"><b>M</b><i>C</i></span>
       <span>
         <strong>Modelo Clínico</strong>
         <small>Propuesta de distribución</small>
@@ -25,6 +24,7 @@
     </button>
     <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
       <a href="#resumen">Resumen</a>
+      <a href="#perfil">Dra. Constanza</a>
       <a href="#agenda">Agenda</a>
       <a href="#participantes">Participantes</a>
       <a href="#orientaciones">Orientaciones</a>
@@ -38,8 +38,8 @@
       <div class="hero-glow hero-glow-b"></div>
       <div class="hero-content wrap">
         <div class="hero-copy reveal">
-          <p class="eyebrow">FACULTAD DE ODONTOLOGÍA · DOCUMENTO INTERACTIVO</p>
-          <h1>Distribución<br><span>Habilitación</span><br>Modelo Clínico</h1>
+          <p class="eyebrow"><span class="signal-dot"></span> FACULTAD DE ODONTOLOGÍA · DOCUMENTO INTERACTIVO</p>
+          <h1><span class="title-line">Distribución</span><span class="title-line accent">Habilitación</span><span class="title-line outline">Modelo Clínico</span></h1>
           <p class="hero-lead">Una propuesta simple, visual y fácil de consultar desde el celular para organizar participantes, horarios, salas y actividades.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#participantes">Buscar mi información</a>
@@ -54,14 +54,28 @@
         </div>
 
         <div class="hero-visual reveal" aria-hidden="true">
-          <div class="orb orb-main">
-            <div class="tooth-line">◯</div>
-            <div class="orb-label">Formación que transforma</div>
+          <div class="clinical-board">
+            <div class="board-top">
+              <span>MAPA DE JORNADA / 01</span>
+              <strong>10—14 AGO</strong>
+            </div>
+            <div class="board-days">
+              <div class="board-day active"><span>LUN</span><strong>10</strong><small>Inicio</small></div>
+              <div class="board-day"><span>MAR</span><strong>11</strong><small>Roles</small></div>
+              <div class="board-day"><span>MIÉ</span><strong>12</strong><small>Clínica</small></div>
+              <div class="board-day"><span>JUE</span><strong>13</strong><small>Integra</small></div>
+              <div class="board-day end"><span>VIE</span><strong>14</strong><small>Cierre</small></div>
+            </div>
+            <div class="board-route">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="board-footer">
+              <div><span>ESPACIOS</span><strong>03</strong></div>
+              <div><span>MODALIDAD</span><strong>PRESENCIAL</strong></div>
+            </div>
           </div>
-          <div class="floating-card fc-one"><span>389</span><small>participantes</small></div>
-          <div class="floating-card fc-two"><span>5</span><small>días</small></div>
-          <div class="floating-card fc-three"><span>3</span><small>espacios</small></div>
-          <div class="visual-note">Personas · Conocimiento · Salud · Comunidad</div>
+          <div class="board-stamp"><strong>389</strong><span>personas<br>en un mismo mapa</span></div>
+          <div class="board-code">MC / 2026</div>
         </div>
       </div>
       <div class="scroll-hint">Desliza para explorar <span>↓</span></div>
@@ -96,6 +110,59 @@
           <p>Se puede enviar por correo, WhatsApp o copiar en cualquier plataforma.</p>
         </article>
       </div>
+    </section>
+
+    <section class="section wrap profile-section" id="perfil">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">PERFIL ACADÉMICO · PROPUESTA</p>
+          <h2>Ciencia aplicada,<br>con identidad propia.</h2>
+        </div>
+        <p>Una forma editorial de presentar referentes, docentes o expositores sin repetir la gráfica de la referencia original.</p>
+      </div>
+      <button class="section-feedback" type="button" data-review-target="Perfil Dra. Constanza">✎ Comentar este perfil</button>
+
+      <article class="profile-card reveal">
+        <div class="profile-portrait has-photo">
+          <img class="profile-photo" src="constanza-fernandez.jpg" alt="Dra. Constanza E. Fernández, odontóloga carióloga" />
+          <span class="profile-kicker">Cariología / Ciencia aplicada</span>
+          <a class="profile-credit" href="https://cl.linkedin.com/in/constanza-e-fern%C3%A1ndez-a4a72b41" target="_blank" rel="noopener noreferrer">Foto pública · perfil profesional ↗</a>
+          <span class="profile-seal">DDS<br>PhD</span>
+        </div>
+        <div class="profile-content">
+          <p class="eyebrow">ODONTÓLOGA · CARIÓLOGA</p>
+          <h2>Dra. Constanza<br>Fernández</h2>
+          <p class="profile-role">Cirujano Dentista · Doctora en Odontología</p>
+          <p class="profile-intro">Académica e investigadora vinculada a la Unidad de Cariología de la Universidad de Talca. Su trabajo acerca la prevención, el diagnóstico y el manejo de la caries a una práctica clínica basada en evidencia.</p>
+
+          <div class="profile-credentials" aria-label="Formación profesional">
+            <div class="profile-credential">
+              <span>Formación</span>
+              <strong>Cirujano Dentista<br>Universidad de Talca</strong>
+            </div>
+            <div class="profile-credential">
+              <span>Doctorado</span>
+              <strong>Odontología · Cariología<br>UNICAMP, Brasil</strong>
+            </div>
+            <div class="profile-credential">
+              <span>Investigación</span>
+              <strong>Postdoctorado<br>University of Michigan</strong>
+            </div>
+          </div>
+
+          <div class="profile-focus" aria-label="Áreas de interés">
+            <span>Cariología basada en evidencia</span>
+            <span>Prevención</span>
+            <span>Investigación clínica</span>
+          </div>
+
+          <div class="profile-links">
+            <a class="btn btn-primary" href="https://www.instagram.com/constanza_fernandez_cariologia/" target="_blank" rel="noopener noreferrer">Ver divulgación profesional ↗</a>
+            <a class="btn btn-ghost" href="https://pubmed.ncbi.nlm.nih.gov/22320182/" target="_blank" rel="noopener noreferrer">Ver publicación científica ↗</a>
+          </div>
+          <p class="profile-note">Perfil elaborado con información profesional publicada. <a href="https://www.youtube.com/watch?v=s2P8XJp3nUA" target="_blank" rel="noopener noreferrer">Ver fuente de formación ↗</a> Este bloque es una propuesta de contenido y no confirma participación en la jornada ficticia del demo.</p>
+        </div>
+      </article>
     </section>
 
     <section class="section section-soft" id="agenda">
@@ -204,6 +271,7 @@
                   <select id="reviewSection" required>
                     <option value="Portada">Portada</option>
                     <option value="Resumen">Resumen</option>
+                    <option value="Perfil Dra. Constanza">Perfil Dra. Constanza</option>
                     <option value="Agenda">Agenda</option>
                     <option value="Participantes">Participantes</option>
                     <option value="Orientaciones">Orientaciones</option>
@@ -287,6 +355,6 @@
   <div class="review-toast" id="reviewToast" role="status" aria-live="polite"></div>
 
   <script src="data.js?v=1"></script>
-  <script src="app.js?v=2"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
