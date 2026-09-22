@@ -1,12 +1,12 @@
 window.MODELO_DATA = {
   stats: [
-    { value: 20, label: 'Líderes referentes', accent: '#ebc6cd' },
-    { value: 51, label: 'Administrativos', accent: '#c8dff4' },
-    { value: 72, label: 'Académicos', accent: '#ddd8f2' },
-    { value: 67, label: 'Estudiantes 5°', accent: '#bfe4d6' },
-    { value: 56, label: 'Estudiantes 4°', accent: '#c8e4ee' },
-    { value: 59, label: 'Estudiantes 3°', accent: '#f2d0b6' },
-    { value: 64, label: 'Estudiantes especialidad', accent: '#c3eadb' }
+    { value: 20, label: 'Líderes referentes', accent: '#bada55' },
+    { value: 51, label: 'Administrativos', accent: '#17b0c5' },
+    { value: 72, label: 'Académicos', accent: '#0984c8' },
+    { value: 67, label: 'Estudiantes 5°', accent: '#4e9faa' },
+    { value: 56, label: 'Estudiantes 4°', accent: '#eeeb67' },
+    { value: 59, label: 'Estudiantes 3°', accent: '#0e95a7' },
+    { value: 64, label: 'Estudiantes especialidad', accent: '#7bc5d0' }
   ],
   agenda: [
     {
