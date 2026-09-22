@@ -28,6 +28,7 @@
       <a href="#agenda">Agenda</a>
       <a href="#participantes">Participantes</a>
       <a href="#orientaciones">Orientaciones</a>
+      <a class="nav-review" href="#revision">Dar opinión</a>
     </nav>
   </header>
 
@@ -43,6 +44,7 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="#participantes">Buscar mi información</a>
             <a class="btn btn-ghost" href="#agenda">Ver agenda</a>
+            <a class="btn btn-review" href="#revision">Comentar el demo</a>
           </div>
           <div class="hero-meta" aria-label="Información general">
             <div><span>Período</span><strong>10–14 agosto 2026</strong></div>
@@ -73,6 +75,7 @@
         </div>
         <p>La idea es que cada persona pueda entender rápidamente cuándo le corresponde participar, dónde debe ir y cuál es su actividad.</p>
       </div>
+      <button class="section-feedback" type="button" data-review-target="Resumen">✎ Comentar esta sección</button>
 
       <div class="stats-grid" id="statsGrid"></div>
 
@@ -104,6 +107,7 @@
           </div>
           <p>Auditorio · Sala HU Friedy · Sala Postgrado</p>
         </div>
+        <button class="section-feedback" type="button" data-review-target="Agenda">✎ Comentar esta sección</button>
 
         <div class="agenda-tabs" id="agendaTabs" role="tablist" aria-label="Seleccionar día"></div>
         <div class="agenda-panel reveal" id="agendaPanel" aria-live="polite"></div>
@@ -118,6 +122,7 @@
         </div>
         <p>Esta sección utiliza nombres ficticios en la demo. En el proyecto final se cargarían los datos reales desde la planilla.</p>
       </div>
+      <button class="section-feedback" type="button" data-review-target="Participantes">✎ Comentar esta sección</button>
 
       <div class="finder-card reveal">
         <div class="finder-input-wrap">
@@ -140,6 +145,7 @@
           </div>
           <p>Un flujo simple pensado para que estudiantes, académicos y equipos administrativos sepan qué hacer sin tener que preguntar lo mismo varias veces.</p>
         </div>
+        <button class="section-feedback section-feedback-light" type="button" data-review-target="Orientaciones">✎ Comentar esta sección</button>
 
         <div class="steps-grid">
           <article class="step-card reveal"><span>01</span><h3>Busca tu nombre</h3><p>Usa el buscador o filtra por categoría.</p></article>
@@ -152,6 +158,7 @@
           <div>
             <p class="eyebrow">VERSIÓN PARA REVISIÓN</p>
             <h3>¿Qué debería evaluar quien reciba este enlace?</h3>
+            <a class="review-callout-link" href="#revision">Registrar mis observaciones →</a>
           </div>
           <ul>
             <li>Si la información se entiende rápido desde el celular.</li>
@@ -159,6 +166,99 @@
             <li>Si la navegación y el buscador resultan cómodos.</li>
             <li>Qué cambios de diseño o contenido harían antes de usarlo oficialmente.</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section review-section" id="revision">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">MODO REVISIÓN</p>
+            <h2>Tu opinión construye<br>la versión final.</h2>
+          </div>
+          <p>Registra cada cambio que quieras proponer. Puedes editar tus observaciones y compartir un resumen completo cuando termines.</p>
+        </div>
+
+        <div class="review-workspace">
+          <aside class="review-guide reveal">
+            <span class="review-mode-badge">Revisión interactiva</span>
+            <h3>Revisa en tres pasos</h3>
+            <ol>
+              <li><strong>Explora</strong><span>Recorre la portada, agenda y participantes.</span></li>
+              <li><strong>Propón</strong><span>Indica qué viste y cómo debería quedar.</span></li>
+              <li><strong>Comparte</strong><span>Envía el resumen por WhatsApp, correo u otra aplicación.</span></li>
+            </ol>
+            <p class="review-privacy">Tus observaciones se guardan solamente en este dispositivo hasta que decidas compartirlas.</p>
+          </aside>
+
+          <div class="review-editor reveal">
+            <form id="reviewForm" novalidate>
+              <div class="review-form-grid">
+                <label>
+                  <span>Tu nombre <small>(opcional)</small></span>
+                  <input id="reviewAuthor" type="text" maxlength="80" placeholder="Ej: María González" autocomplete="name" />
+                </label>
+                <label>
+                  <span>Sección</span>
+                  <select id="reviewSection" required>
+                    <option value="Portada">Portada</option>
+                    <option value="Resumen">Resumen</option>
+                    <option value="Agenda">Agenda</option>
+                    <option value="Participantes">Participantes</option>
+                    <option value="Orientaciones">Orientaciones</option>
+                    <option value="General">General</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Tipo de cambio</span>
+                  <select id="reviewType" required>
+                    <option value="Contenido">Contenido o texto</option>
+                    <option value="Datos">Nombres o datos</option>
+                    <option value="Diseño">Diseño o colores</option>
+                    <option value="Función">Funcionamiento</option>
+                    <option value="Pregunta">Pregunta</option>
+                  </select>
+                </label>
+              </div>
+
+              <label class="review-field">
+                <span>¿Qué parte quieres cambiar?</span>
+                <textarea id="reviewCurrent" rows="3" maxlength="500" placeholder="Ej: En la portada, el período aparece como 10–14 de agosto."></textarea>
+              </label>
+              <label class="review-field">
+                <span>¿Cómo debería quedar? <strong>*</strong></span>
+                <textarea id="reviewProposal" rows="4" maxlength="1000" placeholder="Describe el cambio con el mayor detalle posible." required></textarea>
+              </label>
+
+              <div class="review-form-actions">
+                <button class="btn btn-primary" id="saveReview" type="submit">Agregar observación</button>
+                <button class="btn btn-ghost" id="cancelReviewEdit" type="button" hidden>Cancelar edición</button>
+                <span class="review-form-status" id="reviewFormStatus" role="status" aria-live="polite"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="review-list-shell reveal">
+          <div class="review-list-head">
+            <div>
+              <p class="eyebrow">MIS PROPUESTAS</p>
+              <h3 id="reviewCount">0 observaciones</h3>
+            </div>
+            <span class="autosave-label">Guardado automático</span>
+          </div>
+          <div class="review-empty" id="reviewEmpty">
+            <strong>Aún no hay observaciones.</strong>
+            <p>Usa el formulario para registrar el primer cambio que te gustaría hacer.</p>
+          </div>
+          <div class="review-items" id="reviewItems"></div>
+          <div class="review-share-actions" id="reviewShareActions" hidden>
+            <button class="btn btn-primary" id="shareReviews" type="button">Compartir revisión</button>
+            <button class="btn btn-ghost" id="copyReviews" type="button">Copiar resumen</button>
+            <button class="btn btn-ghost" id="downloadReviews" type="button">Descargar archivo</button>
+            <button class="review-clear" id="clearReviews" type="button">Borrar todo</button>
+          </div>
         </div>
       </div>
     </section>
@@ -180,6 +280,11 @@
       <div id="dialogContent"></div>
     </form>
   </dialog>
+
+  <a class="review-fab" href="#revision" aria-label="Ir al panel para proponer cambios">
+    <span aria-hidden="true">✎</span> Proponer cambios <strong id="reviewFabCount" hidden>0</strong>
+  </a>
+  <div class="review-toast" id="reviewToast" role="status" aria-live="polite"></div>
 
   <script src="data.js"></script>
   <script src="app.js"></script>
